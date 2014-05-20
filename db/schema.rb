@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140520184120) do
+ActiveRecord::Schema.define(version: 20140520204321) do
 
   create_table "file_translation_counts", id: false, force: true do |t|
     t.string   "file_name"
@@ -22,5 +22,13 @@ ActiveRecord::Schema.define(version: 20140520184120) do
   end
 
   add_index "file_translation_counts", ["file_name", "language"], name: "index_file_translation_counts_on_file_name_and_language", unique: true
+
+  create_table "languages", force: true do |t|
+    t.string   "abbreviation"
+    t.string   "full"
+    t.string   "flag"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
