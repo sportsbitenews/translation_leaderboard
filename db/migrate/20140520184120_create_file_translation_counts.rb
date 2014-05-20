@@ -4,8 +4,6 @@ class CreateFileTranslationCounts < ActiveRecord::Migration
       t.string :file_name
       t.string :language
       t.integer :count, default: 0
-
-      t.timestamps
     end
     add_index :file_translation_counts, ["file_name", "language"], :unique => true
   end

@@ -4,8 +4,7 @@ class CreateLanguages < ActiveRecord::Migration
       t.string :abbreviation
       t.string :full
       t.string :flag
-
-      t.timestamps
     end
+    add_index :languages, ["abbreviation"], :unique => true
   end
 end

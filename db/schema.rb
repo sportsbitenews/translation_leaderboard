@@ -14,21 +14,19 @@
 ActiveRecord::Schema.define(version: 20140520204321) do
 
   create_table "file_translation_counts", id: false, force: true do |t|
-    t.string   "file_name"
-    t.string   "language"
-    t.integer  "count",      default: 0
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string  "file_name"
+    t.string  "language"
+    t.integer "count",     default: 0
   end
 
   add_index "file_translation_counts", ["file_name", "language"], name: "index_file_translation_counts_on_file_name_and_language", unique: true
 
   create_table "languages", force: true do |t|
-    t.string   "abbreviation"
-    t.string   "full"
-    t.string   "flag"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string "abbreviation"
+    t.string "full"
+    t.string "flag"
   end
+
+  add_index "languages", ["abbreviation"], name: "index_languages_on_abbreviation", unique: true
 
 end

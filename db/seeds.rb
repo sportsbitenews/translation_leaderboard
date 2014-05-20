@@ -5,3 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+{
+  en: "English",
+  fr: "French",
+}.each do |abbreviation, full|
+  Language.create(abbreviation: abbreviation.to_s, full: full)
+end
